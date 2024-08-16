@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Drive Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Blood Donation Drive Registration</h1>
+    </header>
+
+    <div class="container">
+        <form id="registrationForm">
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="first-name">First Name:</label>
+                <input id="first-name" name="first-name" type="text" required>
+
+                <label for="last-name">Last Name:</label>
+                <input id="last-name" name="last-name" type="text" required>
+
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="phone-number">Phone Number:</label>
+                <input id="phone-number" name="phone-number" type="tel" required>
+            </fieldset>
+
+            <!-- Blood Donation Details -->
+            <fieldset>
+                <legend>Blood Donation Details</legend>
+                <label for="blood-type">Blood Type:</label>
+                <select id="blood-type" name="blood-type" required>
+                    <option value="">(select one)</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+
+                <label for="date">Preferred Donation Date:</label>
+                <input id="date" name="date" type="date" required>
+            </fieldset>
+
+            <!-- Additional Information -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="profile-picture">Profile Picture (optional):</label>
+                <input id="profile-picture" type="file" name="file">
+
+                <label for="message">Message for the Organizers:</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+            </fieldset>
+
+            <label for="terms-and-conditions">
+                <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions"> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/" target="_blank"> terms and conditions</a>
+            </label>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Blood Donation Drive. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Retrieve form values
+            const formData = new FormData(this);
+            const params = new URLSearchParams();
+
+            formData.forEach((value, key) => {
+                if (value) {
+                    params.append(key, value);
+                }
+            });
+
+            // Redirect to the confirmation page with form data
+            window.location.href = 'confirm.html?' + params.toString();
+        });
+    </script>
+</body>
+</html>

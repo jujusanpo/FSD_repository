@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voter Registration Homepage</title>
+        <meta charset="utf-8">
+        <link href="homepagestyles.css">
+        <script>
+            function redirectTo(pageURL){
+                window.location.href = pageURL;
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">मतदाता सेवा पोर्टल<br>
+        Voters Registration</h1>
+        <article>
+            <p id="subtitle" style="text-align: center;">The Official Website of the Electoral Commission, <br>Government of India</p>
+            <form id="loginOptions">
+                <button id="signup" type="submit" onclick="redirectTo('signup.html')">Sign Up</button>
+                <button id="login" type="submit" onclick="redirectTo('login.html')">Login</button>
+            </form>
+        </article>
+    </body>
+</html>

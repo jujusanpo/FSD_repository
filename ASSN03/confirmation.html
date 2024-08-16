@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System - Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function getParameterByName(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name) || 'NA'; // Return 'NA' if value is null or empty
+            }
+
+            // Display submitted data
+            $('#book-title-display').text(getParameterByName('book-title'));
+            $('#author-display').text(getParameterByName('author'));
+            $('#genre-display').text(getParameterByName('genre'));
+            $('#description-display').text(getParameterByName('description'));
+        });
+    </script>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <img src="logo.png" alt="Library Logo" class="logo" id="logo">
+        <h1>Request Confirmation</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="book-request.html" class="nav-link">Book Request</a>
+        <a href="confirmation.html" class="nav-link">Confirmation</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Thank You for Your Request!</h2>
+        <p>We have received your book request. Here are the details:</p>
+        <table class="details-table">
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Book Title</td>
+                <td id="book-title-display"></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td id="author-display"></td>
+            </tr>
+            <tr>
+                <td>Genre</td>
+                <td id="genre-display"></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td id="description-display"></td>
+            </tr>
+        </table>
+        <button onclick="window.location.href='index.html'" class="btn btn-primary">Back to Home</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Library System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

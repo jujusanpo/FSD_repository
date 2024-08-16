@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>If loop in script</title>
+</head>
+<body>
+    <h1>If statements</h1>
+    <form id="monthform" onsubmit="listMonths(event)">
+        <label for="days">Enter the number of days: </label>
+        <input type="number" id="days" name="days"><br><br>
+        <button type="submit">Submit</button><br><br>
+    </form>
+    <div id="result"></div>
+</body>
+<script>
+
+    function listMonths(event){
+    var resultDiv = document.getElementById('result');
+    var days = document.getElementById('days').value;
+    event.preventDefault(event);
+        if (days == 28 || days == 29){
+            resultDiv.innerHTML = "Months with " + days + " days in it is: <br> February";
+        }
+        else if (days == 30){
+            resultDiv.innerHTML = "Months with 30 days in it are: <ul><li>April</li><li>June</li><li>September</li><li>November</li></ul>";
+        }
+        else{
+            resultDiv.innerHTML = "There are no months with the entered no. of days!";
+        }
+    }
+</script>
+</html>

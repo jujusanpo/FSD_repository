@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feedback Result</title>
+    </head>
+    <body>
+        <script>
+            // Get the stored data from localStorage
+            const sname = localStorage.getItem('studentName');
+            const feedback = localStorage.getItem('feedback');
+
+            // Display the data
+            document.write(`<h1>Hello ${sname}!</h1>`);
+            document.write(`<p>Your feedback is:</p>`);
+            document.write(`<p>${feedback}</p>`);
+            document.write(`<button onclick="window.location.href='form1.html'">OK</button>`);
+        </script>
+    </body>
+</html>

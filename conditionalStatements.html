@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Form assignment</title>
+            <script>
+                function displayWinner(){
+                    event.preventDefault();
+                    var bet = document.getElementById('bet')
+                    var betval = bet.value;
+                    var betStr = betval.toUpperCase()
+                    var resultText = "";
+                    var imageURL = "";
+
+                    switch(betStr){
+                        case "INDIA":
+                            resultText = "The reigning winner of world cup!" + "<br>";
+                            imageURL = "india.png"
+                            break;
+                        case "BANGLADESH":
+                            resultText = "A surprise win" + "<br>";
+                            break;
+                            imageURL="bangladesh.jpeg"
+                        case "AUSTRALIA":
+                            resultText = "The reigning winner ofd cup!" + "<br>";
+                            break;
+                            imageURL = "aus.png"
+                        default:
+                            document.write("This country is not a part of the world cup!")
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Testing Conditional Statements</h1>
+            <form id="form1" onsubmit="displayWinner()">
+                <label for="bet">Enter a country to bet on:</label><br>
+                <input name="bet" type="text" id="bet"><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="result"></div>
+            <img id="resultImage"
+        </body>
+    </html>

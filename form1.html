@@ -1,0 +1,32 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Form assignment</title>
+            <style>
+
+            </style>
+            <script>
+                function saveData(event) {
+                    event.preventDefault(); // Prevents form from submitting and page from reloading
+                    const sname = document.getElementById('sname').value;
+                    const feedback = document.getElementById('feedback').value;
+                    localStorage.setItem('studentName', sname);
+                    localStorage.setItem('feedback', feedback);
+                    window.location.href = 'form1result.html'; // Redirects to the result page
+                }
+            </script>
+        </head>
+        <body>
+            
+                <form id="form1" onsubmit="saveData(event)">
+                    <label for="sname">Enter Student's Name:</label><br>
+                    <input name="sname" type="text" id="sname"><br><br>
+                    <label for="password">Enter password: </label><br>
+                    <input type="password" name="password" id="password"><br><br>
+                    <label for="feedback">Enter feedback:</label><br>
+                    <textarea name="feedback" id="feedback" rows="4" cols="50"></textarea><br><br>
+                    <button type="submit">Submit</button>
+                </form>
+
+        </body>
+    </html>

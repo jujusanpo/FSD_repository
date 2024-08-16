@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <img src="logo.png" alt="Library Logo" class="logo" id="logo">
+        <h1>Welcome to the Library System!</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="book-request.html" class="nav-link">Book Request</a>
+        <a href="confirmation.html" class="nav-link">Confirmation</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Enhance Your Reading Habits</h2>
+        <img src="promotional.jpeg" alt="Promote Reading Habits" class="main-img">
+        <p>Explore our library and request your favorite books. Stay updated with our latest additions and keep your reading habits alive!</p>
+        <a href="book-request.html" class="btn btn-primary">Request a Book</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Library System. All Rights Reserved.</p>
+    </footer>
+
+    <!-- jQuery for Dynamic Changes -->
+    <script>
+        $(document).ready(function() {
+            // Change button text
+            $('.btn-primary').text('Explore Books');
+
+            // Set background image
+            $('body').css('background-image', 'url(background.jpg)');
+
+            // Change logo source
+            $('#logo').attr('src', 'new-logo.png');
+        });
+    </script>
+</body>
+</html>

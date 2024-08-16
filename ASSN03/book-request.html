@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System - Book Request</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function validateForm() {
+            const bookTitle = $('#book-title').val().trim();
+            const author = $('#author').val().trim();
+            const genre = $('#genre').val().trim();
+            const description = $('#description').val().trim();
+
+            if (!bookTitle || !author) {
+                alert("Book Title and Author are mandatory fields.");
+                return false;
+            }
+
+            // Add more specific validation as needed
+            return true;
+        }
+
+        $(document).ready(function() {
+            $('#requestForm').on('submit', function(event) {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <img src="logo.png" alt="Library Logo" class="logo" id="logo">
+        <h1>Book Request Form</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="book-request.html" class="nav-link">Book Request</a>
+        <a href="confirmation.html" class="nav-link">Confirmation</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <form id="requestForm" method="post" action="confirmation.html">
+            <fieldset>
+                <legend><strong>Book Details</strong></legend>
+                <label for="book-title">Book Title:</label>
+                <input id="book-title" name="book-title" type="text" required><br><br>
+
+                <label for="author">Author:</label>
+                <input id="author" name="author" type="text" required><br><br>
+
+                <label for="genre">Genre:</label>
+                <input id="genre" name="genre" type="text"><br><br>
+
+                <label for="description">Brief Description:</label>
+                <textarea id="description" name="description" rows="3"></textarea><br><br>
+            </fieldset>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Library System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
